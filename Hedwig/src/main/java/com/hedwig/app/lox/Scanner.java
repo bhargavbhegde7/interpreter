@@ -115,6 +115,7 @@ class Scanner {
             case '/':
                 if (match('/')) {
                     // A comment goes until the end of the line.
+                    //TODO add support for multi line comments
                     while (peek() != '\n' && !isAtEnd()) advance();
                 } else {
                     addToken(SLASH);
