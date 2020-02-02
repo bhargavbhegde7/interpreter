@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * Automatically generates a syntax tree structure.
+ * Generates an abstract syntax tree structure.
  */
 public class GenerateAst {
     public static void main(String[] args) throws IOException {
