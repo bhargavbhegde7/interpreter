@@ -2,16 +2,36 @@ package com.hedwig.app.lox;
 
 abstract class Expr {
     static class Binary extends Expr {
+        final Expr left;
+        final Token operator;
+        final Expr right;
+
         Binary(Expr left, Token operator, Expr right) {
             this.left = left;
             this.operator = operator;
             this.right = right;
         }
-
-        final Expr left;
-        final Token operator;
-        final Expr right;
     }
 
-    // Other expressions...
+    static class Unary extends Expr {
+        final Token left;
+        final Expr expr;
+
+        public Unary(Expr expr, Token left) {
+            this.expr = expr;
+            this.left = left;
+        }
+    }
+
+    static class Grouping extends Expr {
+        final Token left;
+        final Expr expr;
+        final Token right;
+
+        public Grouping(Token left, Expr expr, Token right) {
+            this.left = left;
+            this.expr = expr;
+            this.right = right;
+        }
+    }
 }
